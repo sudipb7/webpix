@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
 
-import { ContactForm } from "@/components/forms/contact";
 import { CheckIcon, XIcon } from "@/components/svg-icons";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,7 +8,7 @@ export default function Home() {
   return (
     <main className="max-w-[1440px] mx-auto">
       <section className="container mx-auto py-12 md:py-24 lg:py-32">
-        <div className="space-y-24">
+        <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24">
           <div className="space-y-4">
             <h1 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-center">
               Convert Images to WebP Format
@@ -35,18 +33,21 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <Image
+          <img
+            src="/hero-light.webp"
+            alt="Convert Images to WebP Format"
+            className="h-full w-full max-w-5xl rounded-lg shadow-lg mx-auto dark:hidden"
+          />
+          <img
             src="/hero.webp"
             alt="Convert Images to WebP Format"
-            width={1200}
-            height={800}
-            className="mx-auto rounded-lg shadow-lg max-w-5xl"
+            className="h-full w-full max-w-5xl rounded-lg shadow-lg mx-auto hidden dark:block"
           />
         </div>
       </section>
       <section
         id="features"
-        className="mx-auto py-12 md:py-24 lg:py-32 bg-muted min-h-[85dvh] grid place-items-center"
+        className="mx-auto py-12 md:py-24 lg:py-32 grid place-items-center"
       >
         <div className="px-4 md:px-6">
           <div className="flex flex-col items-center justify-center text-center">
@@ -61,29 +62,29 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 lg:grid-cols-2 lg:gap-14">
-            <div className="mx-auto bg-secondary-foreground aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last" />
+            <div className="mx-auto bg-secondary-foreground aspect-video overflow-hidden rounded-xl object-cover object-center w-full lg:order-last" />
             <div>
               <ul className="grid gap-2.5">
-                <li className="hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
+                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
                   <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold">Instant Conversion</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold max-sm:text-center">Instant Conversion</h3>
+                    <p className="text-muted-foreground max-sm:text-center">
                       Convert your images to WebP format in just a few seconds.
                     </p>
                   </div>
                 </li>
-                <li className="hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
+                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
                   <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold">Batch Processing</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold max-sm:text-center">Batch Processing</h3>
+                    <p className="text-muted-foreground max-sm:text-center">
                       Convert multiple images at once to save time.
                     </p>
                   </div>
                 </li>
-                <li className="hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
+                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
                   <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold">Lossless Compression</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold max-sm:text-center">Lossless Compression</h3>
+                    <p className="text-muted-foreground max-sm:text-center">
                       Reduce file size without sacrificing image quality.
                     </p>
                   </div>
@@ -95,7 +96,7 @@ export default function Home() {
       </section>
       <section
         id="benefits"
-        className="mx-auto py-12 md:py-24 lg:py-32 min-h-[70dvh] grid place-items-center"
+        className="mx-auto py-12 md:py-24 lg:py-32 grid place-items-center"
       >
         <div className="px-4 md:px-6">
           <div className="flex flex-col items-center justify-center text-center">
@@ -110,29 +111,29 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 lg:grid-cols-2 lg:gap-14">
-            <div className="mx-auto bg-secondary-foreground aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full" />
+            <div className="mx-auto bg-secondary-foreground aspect-video overflow-hidden rounded-xl object-cover object-center w-full" />
             <div>
               <ul className="grid gap-2.5">
-                <li className="hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
+                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
                   <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold">Reduced File Size</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold max-sm:text-center">Reduced File Size</h3>
+                    <p className="text-muted-foreground max-sm:text-center">
                       WebP images are up to 34% smaller than JPEG and PNG files
                     </p>
                   </div>
                 </li>
-                <li className="hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
+                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
                   <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold">Faster Loading Times</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold max-sm:text-center">Faster Loading Times</h3>
+                    <p className="text-muted-foreground max-sm:text-center">
                       Smaller file sizes lead to faster loading times for your website.
                     </p>
                   </div>
                 </li>
-                <li className="hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
+                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
                   <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold">Improved SEO</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold max-sm:text-center">Improved SEO</h3>
+                    <p className="text-muted-foreground max-sm:text-center">
                       Faster loading websites are favored by search engines.
                     </p>
                   </div>
@@ -144,7 +145,7 @@ export default function Home() {
       </section>
       <section
         id="pricing"
-        className="mx-auto py-12 md:py-24 lg:py-32 min-h-[65dvh] grid place-items-center"
+        className="mx-auto py-12 md:py-24 lg:py-32 grid place-items-center"
       >
         <div className="px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-12 text-center">
@@ -196,11 +197,11 @@ export default function Home() {
                 <ul className="my-6 space-y-2 text-left">
                   <li className="flex items-center gap-2">
                     <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Unlimited image conversions</span>
+                    <span>20 image conversions per day</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Up to 20MB file size</span>
+                    <span>Up to 15MB file size</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon className="h-4 w-4 text-green-500" />
@@ -218,9 +219,9 @@ export default function Home() {
               </Card>
               <Card className="flex flex-col items-center justify-between rounded-lg border border-input bg-background p-6 text-center shadow-sm">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Enterprise</h3>
-                  <p className="text-4xl font-bold">Custom</p>
-                  <p className="text-muted-foreground">pricing</p>
+                  <h3 className="text-2xl font-bold">Pro Plus</h3>
+                  <p className="text-4xl font-bold">$25</p>
+                  <p className="text-muted-foreground">per month</p>
                 </div>
                 <ul className="my-6 space-y-2 text-left">
                   <li className="flex items-center gap-2">
@@ -233,7 +234,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Dedicated support</span>
+                    <span>Priority support</span>
                   </li>
                 </ul>
                 <Button asChild>
@@ -249,7 +250,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <ContactForm />
     </main>
   );
 }

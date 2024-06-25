@@ -4,7 +4,7 @@ import { ImageIcon } from "./svg-icons";
 
 export function Header() {
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center">
+    <header className="h-14 flex items-center container">
       <Link
         href="/"
         className="flex items-center justify-center"
@@ -22,21 +22,21 @@ export function Header() {
           Features
         </Link>
         <Link
+          href="#benefits"
+          className="text-sm font-medium hover:underline underline-offset-4"
+          prefetch={false}
+        >
+          Benefits
+        </Link>
+        <Link
           href="#pricing"
           className="text-sm font-medium hover:underline underline-offset-4"
           prefetch={false}
         >
           Pricing
         </Link>
-        {/* <Link
-          href="#"
-          className="text-sm font-medium hover:underline underline-offset-4"
-          prefetch={false}
-        >
-          Testimonials
-        </Link> */}
         <Link
-          href="#contact"
+          href="/contact"
           className="text-sm font-medium hover:underline underline-offset-4"
           prefetch={false}
         >
