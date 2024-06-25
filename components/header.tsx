@@ -1,13 +1,12 @@
 import Link from "next/link";
 
 import { ImageIcon } from "./svg-icons";
-import { ModeToggle } from "./mode-toggle";
 
 export function Header() {
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center">
       <Link
-        href="#"
+        href="/"
         className="flex items-center justify-center"
         prefetch={false}
       >
@@ -16,34 +15,33 @@ export function Header() {
       </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6">
         <Link
-          href="#"
+          href="#features"
           className="text-sm font-medium hover:underline underline-offset-4"
           prefetch={false}
         >
           Features
         </Link>
         <Link
-          href="#"
+          href="#pricing"
           className="text-sm font-medium hover:underline underline-offset-4"
           prefetch={false}
         >
           Pricing
         </Link>
-        <Link
+        {/* <Link
           href="#"
           className="text-sm font-medium hover:underline underline-offset-4"
           prefetch={false}
         >
           Testimonials
-        </Link>
+        </Link> */}
         <Link
-          href="#"
+          href="#contact"
           className="text-sm font-medium hover:underline underline-offset-4"
           prefetch={false}
         >
           Contact
         </Link>
-        <ModeToggle />
       </nav>
     </header>
   );

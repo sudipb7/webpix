@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const jetbrains_mono = JetBrains_Mono({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Header />
           {children}
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
