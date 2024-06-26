@@ -6,8 +6,6 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 
 const jetbrains_mono = JetBrains_Mono({
@@ -31,14 +29,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className={cn("min-h-screen antialiased", jetbrains_mono.variable, GeistSans.variable)}>
         <ThemeProvider
           attribute="class"
-          storageKey="webpic-theme"
+          storageKey="webpics-theme"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
           {children}
-          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>

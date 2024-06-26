@@ -1,255 +1,53 @@
 import Link from "next/link";
 
-import { CheckIcon, XIcon } from "@/components/svg-icons";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
+import { ImageConversionForm } from "@/components/forms/image-conversion";
 
 export default function Home() {
   return (
-    <main className="max-w-[1440px] mx-auto">
-      <section className="container mx-auto py-12 md:py-24 lg:py-32">
-        <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24">
-          <div className="space-y-4">
-            <h1 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-center">
-              Convert Images to WebP Format
-            </h1>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center">
-              Easily convert your images to WebP format to reduce file size and improve website
-              performance.
-            </p>
-            <div className="flex items-center justify-center gap-3.5">
-              <Button
-                asChild
-                className="px-8"
-              >
-                <Link href="/convert">Get Started</Link>
-              </Button>
-              <Button
-                variant="secondary"
-                asChild
-                className="px-8"
-              >
-                <Link href="#pricing">View Pricing</Link>
-              </Button>
+    <>
+      <header className="h-14 flex items-center justify-between container">
+        <Link
+          href="/"
+          className="flex items-center justify-center font-mono font-bold"
+          prefetch={false}
+        >
+          WebPics
+          <span className="sr-only">WebP Converter</span>
+        </Link>
+        <ModeToggle />
+      </header>
+      <main className="relative max-w-[1440px] mx-auto">
+        <section className="container mx-auto py-12 md:py-24 lg:py-32">
+          <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h1 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-center">
+                  Convert images to WebP
+                </h1>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center">
+                  Convert your images to WebP format to reduce file size without compromising
+                  quality.
+                </p>
+              </div>
+              <ImageConversionForm />
             </div>
           </div>
-          <img
-            src="/hero-light.webp"
-            alt="Convert Images to WebP Format"
-            className="h-full w-full max-w-5xl rounded-lg shadow-lg mx-auto dark:hidden"
-          />
-          <img
-            src="/hero.webp"
-            alt="Convert Images to WebP Format"
-            className="h-full w-full max-w-5xl rounded-lg shadow-lg mx-auto hidden dark:block"
-          />
-        </div>
-      </section>
-      <section
-        id="features"
-        className="mx-auto py-12 md:py-24 lg:py-32 grid place-items-center"
-      >
-        <div className="px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center text-center">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-bold tracking-tighter md:text-3xl/tight text-center">
-                Convert Images to WebP in Seconds
-              </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center">
-                Our image converter tool makes it easy to convert your images to the WebP format,
-                reducing file size and improving website performance.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 lg:grid-cols-2 lg:gap-14">
-            <div className="mx-auto bg-secondary-foreground aspect-video overflow-hidden rounded-xl object-cover object-center w-full lg:order-last" />
-            <div>
-              <ul className="grid gap-2.5">
-                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
-                  <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold max-sm:text-center">Instant Conversion</h3>
-                    <p className="text-muted-foreground max-sm:text-center">
-                      Convert your images to WebP format in just a few seconds.
-                    </p>
-                  </div>
-                </li>
-                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
-                  <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold max-sm:text-center">Batch Processing</h3>
-                    <p className="text-muted-foreground max-sm:text-center">
-                      Convert multiple images at once to save time.
-                    </p>
-                  </div>
-                </li>
-                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
-                  <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold max-sm:text-center">Lossless Compression</h3>
-                    <p className="text-muted-foreground max-sm:text-center">
-                      Reduce file size without sacrificing image quality.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
-        id="benefits"
-        className="mx-auto py-12 md:py-24 lg:py-32 grid place-items-center"
-      >
-        <div className="px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center text-center">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-bold tracking-tighter md:text-3xl/tight text-center">
-                Improve Website Performance with WebP
-              </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center">
-                Converting your images to WebP format can help improve website performance and
-                enhance the user experience.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 lg:grid-cols-2 lg:gap-14">
-            <div className="mx-auto bg-secondary-foreground aspect-video overflow-hidden rounded-xl object-cover object-center w-full" />
-            <div>
-              <ul className="grid gap-2.5">
-                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
-                  <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold max-sm:text-center">Reduced File Size</h3>
-                    <p className="text-muted-foreground max-sm:text-center">
-                      WebP images are up to 34% smaller than JPEG and PNG files
-                    </p>
-                  </div>
-                </li>
-                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
-                  <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold max-sm:text-center">Faster Loading Times</h3>
-                    <p className="text-muted-foreground max-sm:text-center">
-                      Smaller file sizes lead to faster loading times for your website.
-                    </p>
-                  </div>
-                </li>
-                <li className="hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all ease-in cursor-pointer">
-                  <div className="grid gap-1 p-3">
-                    <h3 className="text-xl font-bold max-sm:text-center">Improved SEO</h3>
-                    <p className="text-muted-foreground max-sm:text-center">
-                      Faster loading websites are favored by search engines.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
-        id="pricing"
-        className="mx-auto py-12 md:py-24 lg:py-32 grid place-items-center"
-      >
-        <div className="px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-12 text-center">
-            <div className="space-y-2">
-              <h2 className="text-2xl font-bold tracking-tighter md:text-3xl/tight text-center">
-                Affordable Pricing
-              </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center">
-                Our WebP conversion service is available at a low cost, making it accessible to
-                individuals and businesses of all sizes.
-              </p>
-            </div>
-            <div className="grid w-full max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-              <Card className="flex flex-col items-center justify-between rounded-lg border border-input bg-background p-6 text-center shadow-sm">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Free</h3>
-                  <p className="text-4xl font-bold">$0</p>
-                  <p className="text-muted-foreground">per month</p>
-                </div>
-                <ul className="my-6 space-y-2 text-left">
-                  <li className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>5 image conversions per day</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Up to 5MB file size</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <XIcon className="h-4 w-4 text-red-500" />
-                    <span>No priority support</span>
-                  </li>
-                </ul>
-                <Button asChild>
-                  <Link
-                    href="#"
-                    className="px-8"
-                  >
-                    Get Started
-                  </Link>
-                </Button>
-              </Card>
-              <Card className="flex flex-col items-center justify-between rounded-lg border border-input bg-background p-6 text-center shadow-sm">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Pro</h3>
-                  <p className="text-4xl font-bold">$9</p>
-                  <p className="text-muted-foreground">per month</p>
-                </div>
-                <ul className="my-6 space-y-2 text-left">
-                  <li className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>20 image conversions per day</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Up to 15MB file size</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Priority support</span>
-                  </li>
-                </ul>
-                <Button asChild>
-                  <Link
-                    href="#"
-                    className="px-8"
-                  >
-                    Get Pro Plan
-                  </Link>
-                </Button>
-              </Card>
-              <Card className="flex flex-col items-center justify-between rounded-lg border border-input bg-background p-6 text-center shadow-sm">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Pro Plus</h3>
-                  <p className="text-4xl font-bold">$25</p>
-                  <p className="text-muted-foreground">per month</p>
-                </div>
-                <ul className="my-6 space-y-2 text-left">
-                  <li className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Unlimited image conversions</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Unlimited file size</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4 text-green-500" />
-                    <span>Priority support</span>
-                  </li>
-                </ul>
-                <Button asChild>
-                  <Link
-                    href="#"
-                    className="px-8"
-                  >
-                    Contact Us
-                  </Link>
-                </Button>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+      <footer className="flex py-4 w-full items-center justify-center container">
+        <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
+          2024 © WebPics by
+          <Link
+            href="https://x.com/sudipbiswas_dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground hover:underline transform"
+          >
+            @sudipbiswas
+          </Link>
+        </p>
+      </footer>
+    </>
   );
 }

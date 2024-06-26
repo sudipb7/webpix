@@ -2,20 +2,21 @@
 
 import sharp from "sharp";
 import { v4 as uuid } from "uuid";
+import type { ConversionResult, FormDataFile } from "@/types";
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-const ALLOWED_MIME_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp"];
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const ALLOWED_MIME_TYPES = ["image/jpeg", "image/png", "image/jpg"];
 
-export async function convertImages(formData: FormData) {
+export async function convertImages(formData: FormData): Promise<ConversionResult> {
   try {
-    const files = formData.getAll("images");
+    const files = formData.getAll("images") as FormDataFile[];
 
     if (files.length === 0) {
       throw new Error("No files uploaded");
     }
 
     const convertedFiles = await Promise.all(
-      files.map(async (file: any) => {
+      files.map(async (file: FormDataFile) => {
         if (!ALLOWED_MIME_TYPES.includes(file.type)) {
           throw new Error(`Invalid file type: ${file.type}`);
         }
@@ -27,13 +28,13 @@ export async function convertImages(formData: FormData) {
         const buffer = await file.arrayBuffer();
         const outputFileName = `${uuid()}.webp`;
 
-        const webpBuffer = await sharp(Buffer.from(buffer)).webp({ quality: 80 }).toBuffer();
+        const webpBuffer = await sharp(Buffer.from(buffer)).webp({ quality: 75 }).toBuffer();
 
         return {
           originalName: file.name,
           convertedName: outputFileName,
           size: webpBuffer.length,
-          webpBuffer: webpBuffer.toString("base64"),
+          convertedBuffer: webpBuffer.toString("base64"),
         };
       })
     );
@@ -42,8 +43,8 @@ export async function convertImages(formData: FormData) {
       message: "Conversion successful",
       files: convertedFiles,
     };
-  } catch (error: Error | any) {
+  } catch (error) {
     console.error("Conversion error:", error);
-    throw new Error(error.message);
+    throw new Error(error instanceof Error ? error.message : String(error));
   }
 }

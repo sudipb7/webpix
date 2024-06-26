@@ -7,9 +7,6 @@ settings:
 importers:
   .:
     dependencies:
-      "@hookform/resolvers":
-        specifier: ^3.6.0
-        version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
       "@radix-ui/react-dropdown-menu":
         specifier: ^2.1.1
         version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -40,9 +37,9 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
-      react-hook-form:
-        specifier: ^7.52.0
-        version: 7.52.0(react@18.3.1)
+      react-dropzone:
+        specifier: ^14.2.3
+        version: 14.2.3(react@18.3.1)
       sharp:
         specifier: ^0.33.4
         version: 0.33.4
@@ -58,13 +55,10 @@ importers:
       uuid:
         specifier: ^10.0.0
         version: 10.0.0
-      zod:
-        specifier: ^3.23.8
-        version: 3.23.8
     devDependencies:
       "@types/node":
         specifier: ^20
-        version: 20.14.8
+        version: 20.14.9
       "@types/react":
         specifier: ^18
         version: 18.3.3
@@ -170,14 +164,6 @@ packages:
       {
         integrity: sha512-XGndio0l5/Gvd6CLIABvsav9HHezgDFFhDfHk1bvLfr9ni8dojqLSvBbotJEjmIwNHL7vK4QzBJTdBRoB+c1ww==,
       }
-
-  "@hookform/resolvers@3.6.0":
-    resolution:
-      {
-        integrity: sha512-UBcpyOX3+RR+dNnqBd0lchXpoL8p4xC21XP8H6Meb8uve5Br1GCnmg0PcBoKKqPKgGu9GHQ/oygcmPrQhetwqw==,
-      }
-    peerDependencies:
-      react-hook-form: ^7.0.0
 
   "@humanwhocodes/config-array@0.11.14":
     resolution:
@@ -947,10 +933,10 @@ packages:
         integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==,
       }
 
-  "@types/node@20.14.8":
+  "@types/node@20.14.9":
     resolution:
       {
-        integrity: sha512-DO+2/jZinXfROG7j7WKFn/3C6nFwxy2lLpgLjEXJz+0XKphZlTLJ14mo8Vfg8X5BWN6XjyESXq+LcYdT7tR3bA==,
+        integrity: sha512-06OCtnTXtWOZBJlRApleWndH4JsRVs1pDCc8dLSQp+7PpUpX3ePdHyeNSFTeSe7FtKyQkrlPvHwJOW3SLd8Oyg==,
       }
 
   "@types/prop-types@15.7.12":
@@ -1192,6 +1178,13 @@ packages:
         integrity: sha512-OH/2E5Fg20h2aPrbe+QL8JZQFko0YZaF+j4mnQ7BGhfavO7OpSLa8a0y9sBwomHdSbkhTS8TQNayBfnW5DwbvQ==,
       }
 
+  attr-accept@2.2.2:
+    resolution:
+      {
+        integrity: sha512-7prDjvt9HmqiZ0cl5CRjtS84sEyhsHP2coDkaZKRKVfCDo9s7iw7ChVmar78Gu9pC4SoR/28wFu/G5JJhTnqEg==,
+      }
+    engines: { node: ">=4" }
+
   available-typed-arrays@1.0.7:
     resolution:
       {
@@ -1272,10 +1265,10 @@ packages:
       }
     engines: { node: ">= 6" }
 
-  caniuse-lite@1.0.30001636:
+  caniuse-lite@1.0.30001637:
     resolution:
       {
-        integrity: sha512-bMg2vmr8XBsbL6Lr0UHXy/21m84FTxDLWn2FSqMd5PrlbMxwJlQnC2YWYxVgp66PZE+BBNF2jYQUBKCo1FDeZg==,
+        integrity: sha512-1x0qRI1mD1o9e+7mBI7XtzFAP4XszbHaVWsMiGbSPLYekKTJF7K+FNk6AsXH4sUpc+qrsI3pVgf1Jdl/uGkuSQ==,
       }
 
   chalk@4.1.2:
@@ -1780,6 +1773,13 @@ packages:
         integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==,
       }
     engines: { node: ^10.12.0 || >=12.0.0 }
+
+  file-selector@0.6.0:
+    resolution:
+      {
+        integrity: sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw==,
+      }
+    engines: { node: ">= 12" }
 
   fill-range@7.1.1:
     resolution:
@@ -2457,10 +2457,10 @@ packages:
       }
     engines: { node: ">=16 || 14 >=14.17" }
 
-  minimatch@9.0.4:
+  minimatch@9.0.5:
     resolution:
       {
-        integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==,
+        integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==,
       }
     engines: { node: ">=16 || 14 >=14.17" }
 
@@ -2849,14 +2849,14 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
-  react-hook-form@7.52.0:
+  react-dropzone@14.2.3:
     resolution:
       {
-        integrity: sha512-mJX506Xc6mirzLsmXUJyqlAI3Kj9Ph2RhplYhUVffeOQSnubK2uVqBFOBJmvKikvbFV91pxVXmDiR+QMF19x6A==,
+        integrity: sha512-O3om8I+PkFKbxCukfIR3QAGftYXDZfOE2N1mr/7qebQJHs7U+/RSL/9xomJNpRg9kM5h9soQSdf0Gc7OHF5Fug==,
       }
-    engines: { node: ">=12.22.0" }
+    engines: { node: ">= 10.13" }
     peerDependencies:
-      react: ^16.8.0 || ^17 || ^18 || ^19
+      react: ">= 16.8 || 18.0.0"
 
   react-is@16.13.1:
     resolution:
@@ -3497,12 +3497,6 @@ packages:
       }
     engines: { node: ">=10" }
 
-  zod@3.23.8:
-    resolution:
-      {
-        integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==,
-      }
-
 snapshots:
   "@alloc/quick-lru@5.2.0": {}
 
@@ -3554,10 +3548,6 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   "@floating-ui/utils@0.2.3": {}
-
-  "@hookform/resolvers@3.6.0(react-hook-form@7.52.0(react@18.3.1))":
-    dependencies:
-      react-hook-form: 7.52.0(react@18.3.1)
 
   "@humanwhocodes/config-array@0.11.14":
     dependencies:
@@ -3963,7 +3953,7 @@ snapshots:
 
   "@types/json5@0.0.29": {}
 
-  "@types/node@20.14.8":
+  "@types/node@20.14.9":
     dependencies:
       undici-types: 5.26.5
 
@@ -4140,6 +4130,8 @@ snapshots:
 
   ast-types-flow@0.0.8: {}
 
+  attr-accept@2.2.2: {}
+
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.0.0
@@ -4183,7 +4175,7 @@ snapshots:
 
   camelcase-css@2.0.1: {}
 
-  caniuse-lite@1.0.30001636: {}
+  caniuse-lite@1.0.30001637: {}
 
   chalk@4.1.2:
     dependencies:
@@ -4659,6 +4651,10 @@ snapshots:
     dependencies:
       flat-cache: 3.2.0
 
+  file-selector@0.6.0:
+    dependencies:
+      tslib: 2.6.3
+
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
@@ -4737,7 +4733,7 @@ snapshots:
     dependencies:
       foreground-child: 3.2.1
       jackspeak: 2.3.6
-      minimatch: 9.0.4
+      minimatch: 9.0.5
       minipass: 7.1.2
       path-scurry: 1.11.1
 
@@ -4745,7 +4741,7 @@ snapshots:
     dependencies:
       foreground-child: 3.2.1
       jackspeak: 3.4.0
-      minimatch: 9.0.4
+      minimatch: 9.0.5
       minipass: 7.1.2
       package-json-from-dist: 1.0.0
       path-scurry: 1.11.1
@@ -5037,7 +5033,7 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  minimatch@9.0.4:
+  minimatch@9.0.5:
     dependencies:
       brace-expansion: 2.0.1
 
@@ -5069,7 +5065,7 @@ snapshots:
       "@next/env": 14.2.4
       "@swc/helpers": 0.5.5
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001636
+      caniuse-lite: 1.0.30001637
       graceful-fs: 4.2.11
       postcss: 8.4.31
       react: 18.3.1
@@ -5257,8 +5253,11 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-hook-form@7.52.0(react@18.3.1):
+  react-dropzone@14.2.3(react@18.3.1):
     dependencies:
+      attr-accept: 2.2.2
+      file-selector: 0.6.0
+      prop-types: 15.8.1
       react: 18.3.1
 
   react-is@16.13.1: {}
@@ -5728,5 +5727,3 @@ snapshots:
   yaml@2.4.5: {}
 
   yocto-queue@0.1.0: {}
-
-  zod@3.23.8: {}
