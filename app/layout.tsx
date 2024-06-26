@@ -15,7 +15,7 @@ const jetbrains_mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Webpic - Image to WebP Converter",
+  title: "Webpics - Image to WebP Converter",
   description:
     "Convert images to WebP format with ease. Webpic is a free online tool that allows you to convert images to WebP format.",
 };

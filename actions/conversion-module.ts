@@ -2,6 +2,8 @@
 
 import sharp from "sharp";
 import { v4 as uuid } from "uuid";
+
+import { redis } from "@/lib/redis";
 import type { ConversionResult, FormDataFile } from "@/types";
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
@@ -38,6 +40,9 @@ export async function convertImages(formData: FormData): Promise<ConversionResul
         };
       })
     );
+
+    await redis.incr("requests");
+    await redis.incrby("fileCount", files.length);
 
     return {
       message: "Conversion successful",
