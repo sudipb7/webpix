@@ -17,7 +17,7 @@ const jetbrains_mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Webpics - Image to WebP Converter",
   description:
-    "Convert images to WebP format with ease. Webpic is a free online tool that allows you to convert images to WebP format.",
+    "Convert images to WebP format with ease. Webpics is a free online tool that allows you to convert images to WebP format.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
