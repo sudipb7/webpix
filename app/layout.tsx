@@ -2,6 +2,7 @@ import * as React from "react";
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -35,6 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           disableTransitionOnChange
         >
           {children}
+          <Analytics />
           <Toaster />
         </ThemeProvider>
       </body>
