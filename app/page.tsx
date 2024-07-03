@@ -12,7 +12,7 @@ export default function Home() {
           className="flex items-center justify-center font-mono font-bold"
           prefetch={false}
         >
-          WebPix
+          WebPx
           <span className="sr-only">WebP Converter</span>
         </Link>
         <ModeToggle />
@@ -37,7 +37,7 @@ export default function Home() {
       </main>
       <footer className="flex py-4 w-full items-center justify-center container">
         <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-          2024 © WebPix by
+          2024 © WebPx by
           <Link
             href="https://x.com/sudipbiswas_dev"
             target="_blank"

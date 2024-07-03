@@ -16,9 +16,9 @@ const jetbrains_mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WebPix - Image to WebP Converter",
+  title: "WebPx - Image to WebP Converter",
   description:
-    "Convert images to WebP format with ease. WebPix is a free online tool that allows you to convert images to WebP format.",
+    "Convert images to WebP format with ease. WebPx is a free online tool that allows you to convert images to WebP format.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className={cn("min-h-screen antialiased", jetbrains_mono.variable, GeistSans.variable)}>
         <ThemeProvider
           attribute="class"
-          storageKey="webpix-theme"
+          storageKey="webpx-theme"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange

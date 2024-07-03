@@ -1,8 +1,8 @@
-# WebPix
+# WebPx
 
 ## Description
 
-Convert images to WebP format with ease. WebPix is a free online tool that allows you to convert images to WebP format.
+Convert images to WebP format with ease. WebPx is a free online tool that allows you to convert images to WebP format.
 
 ## Features
 
@@ -15,7 +15,7 @@ Convert images to WebP format with ease. WebPix is a free online tool that allow
 
 ## Teach Stack
 
-WebPix is built using modern web technologies:
+WebPx is built using modern web technologies:
 
 - Next.js: React framework for building server-side rendered and static websites.
 - TypeScript: Typed superset of JavaScript.
@@ -26,18 +26,18 @@ WebPix is built using modern web technologies:
 
 ## Local Installation
 
-To run WebPix locally, follow these steps:
+To run WebPx locally, follow these steps:
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/sudipb7/WebPix.git
+git clone https://github.com/sudipb7/WebPx.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd WebPix
+cd WebPx
 ```
 
 3. Install dependencies:
