@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { ModeToggle } from "@/components/mode-toggle";
-import { ImageConversionForm } from "@/components/forms/image-conversion";
+import { ImageCompressorForm } from "@/components/forms/image-compression";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
           prefetch={false}
         >
           WebPx
-          <span className="sr-only">WebP Converter</span>
+          <span className="sr-only">WebPx - Image Optimization Tool</span>
         </Link>
         <ModeToggle />
       </header>
@@ -21,16 +21,15 @@ export default function Home() {
         <section className="container mx-auto py-12 md:py-24 lg:py-32">
           <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24">
             <div className="space-y-8">
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <h1 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-center">
                   Optimize Your Images
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center">
-                  Convert JPG, PNG into WebP format to reduce file size and improve page load time.
-                  And optimize SVG and GIF files.
+                  Compress your images with the best quality and smallest size.
                 </p>
               </div>
-              <ImageConversionForm />
+              <ImageCompressorForm />
             </div>
           </div>
         </section>

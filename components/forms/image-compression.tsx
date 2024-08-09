@@ -1,12 +1,12 @@
 "use client";
 
-import axios from "axios";
 import Image from "next/image";
 import * as React from "react";
 import { toast } from "sonner";
-import { useDropzone } from "react-dropzone";
 import { UploadIcon } from "lucide-react";
+import { useDropzone } from "react-dropzone";
 
+import compressImage from "@/lib/action";
 import { Button } from "@/components/ui/button";
 
 interface FileWithPreview extends File {
@@ -21,9 +21,9 @@ interface ConvertedFile {
   mimeType: string;
 }
 
-const ALLOWED_MIME_TYPES = ["image/jpeg", "image/png", "image/jpg", "image/gif", "image/svg+xml"];
+const ALLOWED_MIME_TYPES = ["image/jpeg", "image/png", "image/jpg", "image/gif", "image/svg+xml", "image/svg"];
 
-export function ImageConversionForm() {
+export function ImageCompressorForm() {
   const [files, setFiles] = React.useState<FileWithPreview[]>([]);
   const [convertedFiles, setConvertedFiles] = React.useState<ConvertedFile[]>([]);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -56,12 +56,12 @@ export function ImageConversionForm() {
       setConvertedFiles([]);
 
       if (files.length === 0) {
-        toast.error("Please select an image to convert");
+        toast.error("Please select an image to proceed");
         return;
       }
 
       if (files.length > 10) {
-        toast.error("You can only convert up to 10 images at a time");
+        toast.error("You can only upload up to 10 images at a time");
         return;
       }
 
@@ -70,22 +70,11 @@ export function ImageConversionForm() {
         formData.append("images", file, file.name);
       });
 
-      const { data: resData } = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/convert`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const compressedFiles = await compressImage(formData);
 
-      console.log(resData);
-
-      setConvertedFiles(resData.files);
-      toast.success("Images converted successfully");
+      setConvertedFiles(compressedFiles);
+      toast.success("Images compressed successfully");
     } catch (err) {
-      console.error("Conversion error:", err);
       toast.error("An error occurred while converting the images");
     } finally {
       setIsLoading(false);
@@ -117,7 +106,7 @@ export function ImageConversionForm() {
 
   return (
     <section className="w-full container">
-      <div className="w-full max-w-md space-y-4 mx-auto">
+      <div className="w-full max-w-md mx-auto">
         <div
           {...getRootProps({
             className:
@@ -126,12 +115,15 @@ export function ImageConversionForm() {
         >
           <input {...getInputProps()} />
           <UploadIcon className="h-8 w-8" />
-          <p className="text-center">Drag and drop your image here or click to select a file.</p>
+          <div className="space-y-1">
+            <p className="text-center">
+              <span className="font-semibold">Click to upload</span> or drag & drop
+            </p>
+            <p className="text-center text-[11.5px] text-muted-foreground opacity-40">
+              Supported: JPG, PNG, SVG, GIF
+            </p>
+          </div>
         </div>
-        <p className="text-sm text-center text-muted-foreground mt-2">
-          {ALLOWED_MIME_TYPES.map((type) => type.split("/")[1]).join(", ")} files only. Max 10
-          files, 10MB each.
-        </p>
       </div>
 
       {files.length > 0 && (

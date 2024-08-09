@@ -75,11 +75,15 @@ body {
   border-color: var(--border);
 }
 
+::selection {
+  @apply bg-foreground text-background;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-jetbrains_mono), sans-serif;
+  font-family: var(--font-geist-mono), sans-serif;
 }
